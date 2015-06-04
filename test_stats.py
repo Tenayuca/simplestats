@@ -3,6 +3,17 @@ from nose.tools import assert_equal, assert_almost_equal, assert_true, \
 
 from stats import mean, mode, std, var#, median
 
+
+def test_median(vals):
+   "my test"
+    vals.sort()
+    z = len(vals)
+    index = z / 2
+    if z % 2 == 0:
+       return mean([vals[index], vals[index - 1]])
+    else:
+       return vals[index]
+
 def test_mean1():
     obs = mean([0, 0, 0, 0])
     exp = 0
